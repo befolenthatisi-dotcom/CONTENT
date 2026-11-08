@@ -167,7 +167,7 @@ export default function ContentManager() {
   onChange={change}
 >
   {THUMBNAILS.map((image) => (
-    <option key={image} value={`/images/${image}`}>
+    <option key={image} value={`/IMAGES/${image}`}>
       {image}
     </option>
   ))}
