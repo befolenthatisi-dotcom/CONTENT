@@ -1,0 +1,48 @@
+const sampleContent = [
+  {
+    _id: "sample-1",
+    title: "Learn React in 30 Minutes",
+    description: "A quick beginner-friendly walkthrough of components, props and state.",
+    category: "Education",
+    contentType: "video",
+    thumbnailUrl: "",
+    publishDate: "2026-10-20T10:00:00Z",
+    featured: true,
+    views: 120,
+  },
+  {
+    _id: "sample-2",
+    title: "5 Gadgets Worth Buying in 2026",
+    description: "My honest review of the gadgets that actually improved my workflow.",
+    category: "Technology",
+    contentType: "article",
+    thumbnailUrl: "",
+    publishDate: "2026-10-25T09:00:00Z",
+    featured: true,
+    views: 86,
+  },
+  {
+    _id: "sample-3",
+    title: "Study Habits That Work",
+    description: "Podcast episode on building a study routine that sticks.",
+    category: "Lifestyle",
+    contentType: "podcast",
+    thumbnailUrl: "",
+    publishDate: "2026-10-28T08:00:00Z",
+    featured: false,
+    views: 45,
+  },
+  {
+    _id: "sample-4",
+    title: "Behind the Scenes: My Setup",
+    description: "A look at the desk, camera and tools I use to make content.",
+    category: "Entertainment",
+    contentType: "image",
+    thumbnailUrl: "",
+    publishDate: "2026-11-01T12:00:00Z",
+    featured: false,
+    views: 30,
+  },
+];
+
+export default sampleContent;
