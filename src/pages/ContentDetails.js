@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { useParams, Link } from "react-router-dom";
 import { api, getViewerId } from "../api/api";
 import Navbar from "../components/Navbar.js";
@@ -37,22 +37,22 @@ export default function ContentDetails() {
     load();
   }, [id]);
 
-  const loadEngagement = async () => {
-    try {
-      const l = await api(`/likes/${id}?viewerId=${getViewerId()}`);
-      setLikeCount(l.count || 0);
-      setLiked(!!l.liked);
-      const c = await api(`/comments/${id}`);
-      if (Array.isArray(c)) setComments(c);
-    } catch (error) {
-  setNotFound(true);
-}
-  };
+  const loadEngagement = useCallback(async () => {
+  try {
+    const l = await api(`/likes/${id}?viewerId=${getViewerId()}`);
+    setLikeCount(l.count || 0);
+    setLiked(!!l.liked);
 
-  useEffect(() => {
-    loadEngagement();
-    
-  }, [id]);
+    const c = await api(`/comments/${id}`);
+    if (Array.isArray(c)) setComments(c);
+  } catch (error) {
+    setNotFound(true);
+  }
+}, [id]);
+ 
+useEffect(() => {
+  loadEngagement();
+}, [loadEngagement]);
 
   const copyLink = async () => {
     try {
