@@ -2,7 +2,6 @@ import { useEffect, useState, useCallback } from "react";
 import { useParams, Link } from "react-router-dom";
 import { api, getViewerId } from "../api/api";
 import Navbar from "../components/Navbar.js";
-import { thumbFor } from "../utils/images";
 import sampleContent from "../data/sampleContent";
 
 export default function ContentDetails() {
